@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>마작 점수 계산기</title>
+<style>
+    body {
+        font-family: "나눔바른고딕";
+    }
+    #east_score {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        font-size: 10vw;
+        font-weight: 500;
+    }
+    #west_score {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        text-align: center;
+        font-size: 10vw;
+        font-weight: 500;
+    }
+    #north_score {
+        width: 100vh;
+        transform-origin: 0 0;
+        transform: rotate(90deg);
+        position: fixed;
+        left:10vw;
+        text-align: center;
+        font-size: 10vw;
+        font-weight: 500;
+    }
+    #south_score {
+        width: 100vh;
+        transform-origin: 100% 0;
+        transform: rotate(-90deg);
+        right: 10vw;
+        position: fixed;
+        text-align:center;
+        font-size: 10vw;
+        font-weight: 500;
+    }
+    #center_div{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        line-height: 100vh;
+        text-align: center;
+        font-size: 10vw;
+        font-weight: 500;
+        font-family: 'KoPubBatang';
+    }
+</style>
+</head>
+
+<body>
+    <div id='east_score'>250<span style="font-size:8vw">00</span></div>
+    <div id='south_score'>250<span style="font-size:8vw">00</span></div>
+    <div id='west_score'>250<span style="font-size:8vw">00</span></div>
+    <div id='north_score'>250<span style="font-size:8vw">00</span></div>
+    <div id='center_div'>
+        <span>동 1 국</span></div>
+</body>
+
+</html>
