@@ -49,25 +49,49 @@
         font-weight: 500;
     }
     #center_div{
-        position: fixed;
+        position: absolute;
+        display: flex;
         width: 100vw;
         height: 100vh;
-        line-height: 100vh;
+        left: -4.5vw;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         font-size: 10vw;
         font-weight: 500;
         font-family: 'KoPubBatang';
     }
+    #buttons{
+        position: absolute;
+        left: 68vw;
+        font-size: 5vw;
+        line-height: normal;
+    }
 </style>
 </head>
 
 <body>
-    <div id='east_score'>250<span style="font-size:8vw">00</span></div>
-    <div id='south_score'>250<span style="font-size:8vw">00</span></div>
-    <div id='west_score'>250<span style="font-size:8vw">00</span></div>
-    <div id='north_score'>250<span style="font-size:8vw">00</span></div>
+    <div id='east_score'><span style="font-size:8vw; color:red;">東</span>250<span style="font-size:8vw">00</span></div>
+    <div id='south_score'><span style="font-size:8vw">南</span>250<span style="font-size:8vw">00</span></div>
+    <div id='west_score'><span style="font-size:8vw">西</span>250<span style="font-size:8vw">00</span></div>
+    <div id='north_score'><span style="font-size:8vw">北</span>250<span style="font-size:8vw">00</span></div>
     <div id='center_div'>
-        <span>동 1 국</span></div>
+        <div>
+            <span>동 1 국</span>
+            <br>
+            <div style="display: flex; justify-content: space-evenly;">
+                <div style="display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.37 38.84" style="width:5vw"><g data-name="레이어 2"><g data-name="레이어 1"><g data-name="그룹 4"><g data-name="사각형 1"><path fill="#fff" d="M0 34.963L19.383-.004l6.997 3.878L6.997 38.842z"></path><path fill="none" stroke="#5d5c5c" d="M.68 34.768L19.578.676l6.113 3.388L6.793 38.157z"></path></g><g data-name="타원 1"><circle cx="13.18" cy="19.43" r="2" fill="#ff8282"></circle><circle cx="13.18" cy="19.43" r="1.5" fill="none" stroke="#ff8282"></circle></g></g></g></g></svg>
+                    <span style="font-size:6vw; transform: translateY(15%); ">0</span>
+                </div>
+                <div style="display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.4 38.8" style="width:5vw"><defs><style>.cls-1{fill:#fff}.cls-2,.cls-5{fill:none;stroke-miterlimit:4}.cls-2{stroke:#5d5c5c}.cls-5{stroke:#707070}</style></defs><g id="레이어_2" data-name="레이어 2"><g id="레이어_1-2" data-name="레이어 1"><g id="그룹_4" data-name="그룹 4"><g id="사각형_1" data-name="사각형 1"><path d="M-6.8 15.4h40v8h-40z" class="cls-1" transform="rotate(-61 13.2 19.4)"/><path d="M-6.3 15.9h39v7h-39z" class="cls-2" transform="rotate(-61 13.2 19.4)"/></g><g id="타원_1" data-name="타원 1"><circle cx="13.2" cy="19.4" r="2" fill="#ff8282"/><circle cx="13.2" cy="19.4" r="1.5" fill="none" stroke="#ff8282"/></g></g><g id="사각형_4" data-name="사각형 4"><path d="M-6.8 15.4h40v8h-40z" class="cls-1" transform="rotate(-61 13.2 19.4)"/><path d="M-6.3 15.9h39v7h-39z" class="cls-2" transform="rotate(-61 13.2 19.4)"/></g><g id="타원_11" data-name="타원 11"><circle cx="11.6" cy="24.3" r="1" class="cls-1"/><circle cx="11.6" cy="24.3" r=".5" class="cls-5"/></g><g id="타원_12" data-name="타원 12"><circle cx="13.6" cy="20.8" r="1" class="cls-1"/><circle cx="13.6" cy="20.8" r=".5" class="cls-5"/></g><g id="타원_13" data-name="타원 13"><circle cx="15.5" cy="17.3" r="1" class="cls-1"/><circle cx="15.5" cy="17.3" r=".5" class="cls-5"/></g><g id="타원_14" data-name="타원 14"><circle cx="17.4" cy="13.8" r="1" class="cls-1"/><circle cx="17.4" cy="13.8" r=".5" class="cls-5"/></g><g id="타원_15" data-name="타원 15"><circle cx="8.9" cy="25.1" r="1" class="cls-1"/><circle cx="8.9" cy="25.1" r=".5" class="cls-5"/></g><g id="타원_16" data-name="타원 16"><circle cx="10.9" cy="21.6" r="1" class="cls-1"/><circle cx="10.9" cy="21.6" r=".5" class="cls-5"/></g><g id="타원_17" data-name="타원 17"><circle cx="12.8" cy="18.1" r="1" class="cls-1"/><circle cx="12.8" cy="18.1" r=".5" class="cls-5"/></g><g id="타원_18" data-name="타원 18"><circle cx="14.7" cy="14.6" r="1" class="cls-1"/><circle cx="14.7" cy="14.6" r=".5" class="cls-5"/></g></g></g></svg>
+                    <span style="font-size:6vw; transform: translateY(15%); ">0</span>
+                </div>
+            </div>
+        </div>
+        <span id='buttons'><span>쯔모</span><br><span>론</span><br><span>유국</span></span>
+    </div>
 </body>
 <script>
     document.getElementById("center_div").addEventListener("click", goFull);
