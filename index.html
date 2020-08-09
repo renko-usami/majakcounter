@@ -21,12 +21,12 @@
             display: none; 
         }
         #east_div {
+            width: 40vw;
             position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -3vw;
+            left: 30vw;
+            bottom: -2vw;
             text-align: center;
-            font-size: 120pt;
+            font-size: 10vw;
             font-weight: 500;
             z-index: 2;
             background-position: center top;
@@ -35,12 +35,12 @@
             background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNi43NSAyLjI1Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDpyZWQ7fS5hLC5ie29wYWNpdHk6MC40O30uYntmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjAuMjVweDt9PC9zdHlsZT48L2RlZnM+PGNpcmNsZSBjbGFzcz0iYSIgY3g9IjEzLjM4IiBjeT0iMS4xMyIgcj0iMC41Ii8+PHJlY3QgY2xhc3M9ImIiIHg9IjAuMTMiIHk9IjAuMTMiIHdpZHRoPSIyNi41IiBoZWlnaHQ9IjIiLz48L3N2Zz4=);
         }
         #west_div {
+            width: 40vw;
             position: fixed;
-            left: 50%;
-            transform: translateX(-50%) ;
-            top: -5vw;
+            left: 30vw;
+            top: -2vw;
             text-align: center;
-            font-size: 120pt;
+            font-size: 10vw;
             font-weight: 500;
             z-index: 2;
             padding-bottom: 20px;
@@ -50,12 +50,14 @@
             background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNi43NSAyLjI1Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDpyZWQ7fS5hLC5ie29wYWNpdHk6MC40O30uYntmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjAuMjVweDt9PC9zdHlsZT48L2RlZnM+PGNpcmNsZSBjbGFzcz0iYSIgY3g9IjEzLjM4IiBjeT0iMS4xMyIgcj0iMC41Ii8+PHJlY3QgY2xhc3M9ImIiIHg9IjAuMTMiIHk9IjAuMTMiIHdpZHRoPSIyNi41IiBoZWlnaHQ9IjIiLz48L3N2Zz4=);
         }
     #north_div {
+            width: 80vh;
             transform-origin: 0 0;
-            transform: rotate(90deg) translateX(50%);
+            transform: rotate(90deg);
             position: fixed;
+            top: 10vh;
             left: 12vw;
             text-align: center;
-            font-size: 120pt;
+            font-size: 10vw;
             font-weight: 500;
             z-index: 2;
             background-position: center top;
@@ -64,13 +66,14 @@
             background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNi43NSAyLjI1Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDpyZWQ7fS5hLC5ie29wYWNpdHk6MC40O30uYntmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjAuMjVweDt9PC9zdHlsZT48L2RlZnM+PGNpcmNsZSBjbGFzcz0iYSIgY3g9IjEzLjM4IiBjeT0iMS4xMyIgcj0iMC41Ii8+PHJlY3QgY2xhc3M9ImIiIHg9IjAuMTMiIHk9IjAuMTMiIHdpZHRoPSIyNi41IiBoZWlnaHQ9IjIiLz48L3N2Zz4=);
         }
         #south_div {
+            width: 80vh;
             transform-origin: 100% 0;
-            transform: rotate(-90deg) translateX(-33%);
+            transform: rotate(-90deg);
             top: 10vh;
             right: 12vw;
             position: fixed;
             text-align:center;
-            font-size: 120pt;
+            font-size: 10vw;
             font-weight: 500;
             z-index: 2;
             background-position: center top;
@@ -97,31 +100,19 @@
             font-size: 5vw;
             line-height: normal;
         }
-        #tsumo {
-            width: 70vw;
-            height: 70vh;
-            position: fixed;
-            background-color: white;
-            text-align: center;
-            left: 15vw;
-            top: 15vh;
-            z-index: 1;
-        }
+
         .btn {
             font-size: 3vh;
         }
-        #hoora_score {
+        .popup {
             position: absolute;
-            z-index: -1;
-            background-color: white;
-            top: 50%;
             left: 50%;
-            font-size: 6vh;
-            transform: translate(-50%, -50%);
+            top: 50%;
+            font-size: 2rem;
+            transform: translate(-50%, -50%) !important;
         }
         .form-control-lg {
             width: 50%;
-            height: calc(2.5em + 1rem + 2px);
             display: inline;
             transform: translate(0, -10%);
             font-size: 3vh;
@@ -131,10 +122,10 @@
 </head>
 
 <body>
-    <div id='east_div'><span style="font-size:100px; color:red;">東</span><span id='east_score'>250</span><span style="font-size:90px">00</span></div>
-    <div id='south_div'><span style="font-size:100px">南</span><span id='south_score'>250</span><span style="font-size:90px">00</span></div>
-    <div id='west_div'><span style="font-size:100px">西</span><span id='west_score'>250</span><span style="font-size:90px">00</span></div>
-    <div id='north_div'><span style="font-size:100px">北</span><span id='north_score'>250</span><span style="font-size:90px">00</span></div>
+    <div id='east_div'><span style="font-size:8vw; color:red;">東</span><span id='east_score'>250</span><span style="font-size:8vw">00</span></div>
+    <div id='south_div'><span style="font-size:8vw">南</span><span id='south_score'>250</span><span style="font-size:8vw">00</span></div>
+    <div id='west_div'><span style="font-size:8vw">西</span><span id='west_score'>250</span><span style="font-size:8vw">00</span></div>
+    <div id='north_div'><span style="font-size:8vw">北</span><span id='north_score'>250</span><span style="font-size:8vw">00</span></div>
     <div id='center_div'>
         <div>
             <span>동 1 국</span>
@@ -150,21 +141,87 @@
                 </div>
             </div>
         </div>
-        <span id='buttons'><span>쯔모</span><br><span>론</span><br><span>유국</span></span>
+        <span id='buttons'>
+            <span data-toggle='modal' data-target='#tsumo-box'>쯔모</span><br>
+            <span data-toggle='modal' data-target='#ron-box'>론</span><br>
+            <span data-toggle='modal' data-target='#nagare-box'>유국</span>
+        </span>
     </div>
-    <div id='hoora' data-toggle="buttons">
-          <div id='hoora_score'>
-            <select class="form-control form-control-lg">
-                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13+</option>
-            </select>판
-            <select class="form-control form-control-lg">
-                <option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110+</option>
-            </select>부
-            <label class="btn btn-secondary active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked>쯔모
-              </label>
+    <div id='tsumo-box' class='modal fade'>
+        <div  id='tsumo' class='popup modal-dialog'>
+            <div id='hoora_score' class='modal-content'>
+                <div style='font-size: 2rem;'class='modal-header'>
+                    쯔모 화료 점수 계산
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class='modal-body' style='align-items:center'>
+                    <div style='display:flex; justify-content: center; margin-bottom: 6px'>
+                        <select class="form-control form-control-lg">
+                        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13+</option>
+                    </select>판</div>
+                    <div style='display:flex; justify-content: center'>
+                        <select class="form-control form-control-lg">
+                        <option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110+</option>
+                    </select>부</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">쯔모</button>
+                  </div>
+            </div>
         </div>
-      </div>
+    </div>
+    <div id='ron-box' class='modal fade'>
+        <div  id='ron' class='popup modal-dialog'>
+            <div class='modal-content'>
+                <div style='font-size: 2rem;'class='modal-header'>
+                    론 화료 점수 계산
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class='modal-body' style='align-items:center'>
+                    <div style='display:flex; justify-content: center; margin-bottom: 6px'>
+                        <select class="form-control form-control-lg">
+                        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13+</option>
+                    </select>판</div>
+                    <div style='display:flex; justify-content: center'>
+                        <select class="form-control form-control-lg">
+                        <option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110+</option>
+                    </select>부</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">론</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div id='nagare-box' class='modal fade'>
+        <div  id='nagare' class='popup modal-dialog'>
+            <div class='modal-content'>
+                <div style='font-size: 2rem;'class='modal-header'>
+                    유국 점수 계산
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class='modal-body' style='align-items:center'>
+                    <div style='display:flex; justify-content: center; margin-bottom: 6px'>
+                        <select class="form-control form-control-lg">
+                        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13+</option>
+                    </select>판</div>
+                    <div style='display:flex; justify-content: center'>
+                        <select class="form-control form-control-lg">
+                        <option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110+</option>
+                    </select>부</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">유국</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
 </body>
