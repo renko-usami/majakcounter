@@ -17,9 +17,6 @@
         body {
             font-family: 'Noto Serif KR';
         }
-        [type='radio'] {
-            display: none; 
-        }
         #east_div {
             width: 40vw;
             position: fixed;
@@ -36,9 +33,10 @@
         }
         #west_div {
             width: 40vw;
+            transform: rotate(180deg);
             position: fixed;
             left: 30vw;
-            top: -2vw;
+            top: -3vw;
             text-align: center;
             font-size: 10vw;
             font-weight: 500;
@@ -108,15 +106,18 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            font-size: 1.2rem;
+            font-size: calc(1.7em + 0.5rem);
             transform: translate(-50%, -50%) !important;
         }
         .form-control-lg {
-            width: 50%;
+            width: 70%;
             display: inline;
             transform: translate(0, -10%);
             font-size: 3vh;
             margin-right: 3%;
+        }
+        .form-check {
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -128,7 +129,7 @@
     <div id='north_div'><span style="font-size:8vw">北</span><span id='north_score'>250</span><span style="font-size:8vw">00</span></div>
     <div id='center_div'>
         <div>
-            <span>동 1 국</span>
+            <span id='curr_time'>동 1 국</span>
             <br>
             <div style="display: flex; justify-content: space-evenly;">
                 <div style="display: flex;">
@@ -150,24 +151,52 @@
     <div id='tsumo-box' class='modal fade'>
         <div  id='tsumo' class='popup modal-dialog'>
             <div id='hoora_score' class='modal-content'>
-                <div style='font-size: 2rem;'class='modal-header'>
+                <div style='font-size: 1.8rem;'class='modal-header'>
                     쯔모 화료 점수 계산
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                 </div>
-                <div class='modal-body' style='align-items:center'>
-                    <div style='display:flex; justify-content: center; margin-bottom: 6px'>
-                        <select class="form-control form-control-lg">
+                <div class='modal-body row' style='justify-content:center'>
+                    <div class="form-check">
+                        <div>
+                        <input class="form-check-input" type="radio" name="who_tsumo" id="tong_tsumo" value="option1" checked>
+                        <label class="form-check-label" for="tong_tsumo">
+                            동가
+                        </label>
+                        </div>
+                        <div>
+                        <input class="form-check-input" type="radio" name="who_tsumo" id="nan_tsumo" value="option2">
+                        <label class="form-check-label" for="nan_tsumo">
+                            남가
+                        </label>
+                       </div>
+                       <div>
+                        <input class="form-check-input" type="radio" name="who_tsumo" id="sha_tsumo" value="option3">
+                        <label class="form-check-label" for="sha_tsumo">
+                            서가
+                        </label>
+                    </div>
+                    <div>    
+                        <input class="form-check-input" type="radio" name="who_tsumo" id="pe_tsumo" value="option4">
+                        <label class="form-check-label" for="pe_tsumo">
+                            북가
+                        </label>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                    <div style='text-align: center; margin-bottom: 6px'>
+                        <select class="form-control form-control-lg" id='tsumo_pan'>
                         <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13+</option>
                     </select>판</div>
-                    <div style='display:flex; justify-content: center'>
-                        <select class="form-control form-control-lg">
+                    <div style='text-align: center'>
+                        <select class="form-control form-control-lg" id="tsumo_fu">
                         <option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110+</option>
                     </select>부</div>
                 </div>
+            </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">쯔모</button>
+                    <button type="button" class="btn btn-primary" id="tsumo_button" data-dismiss='modal'>쯔모</button>
                   </div>
             </div>
         </div>
@@ -175,18 +204,18 @@
     <div id='ron-box' class='modal fade'>
         <div  id='ron' class='popup modal-dialog'>
             <div class='modal-content'>
-                <div style='font-size: 2rem;'class='modal-header'>
+                <div style='font-size: 1.8rem;'class='modal-header'>
                     론 화료 점수 계산
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                 </div>
                 <div class='modal-body' style='align-items:center'>
-                    <div style='display:flex; justify-content: center; margin-bottom: 6px'>
+                    <div style='text-align: center; margin-bottom: 6px'>
                         <select class="form-control form-control-lg">
                         <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13+</option>
                     </select>판</div>
-                    <div style='display:flex; justify-content: center'>
+                    <div style='text-align: center'>
                         <select class="form-control form-control-lg">
                         <option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110+</option>
                     </select>부</div>
@@ -200,18 +229,18 @@
     <div id='nagare-box' class='modal fade'>
         <div  id='nagare' class='popup modal-dialog'>
             <div class='modal-content'>
-                <div style='font-size: 2rem;'class='modal-header'>
+                <div style='font-size: 1.8rem;'class='modal-header'>
                     유국 점수 계산
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                 </div>
                 <div class='modal-body' style='align-items:center'>
-                    <div style='display:flex; justify-content: center; margin-bottom: 6px'>
+                    <div style='text-align: center; margin-bottom: 6px'>
                         <select class="form-control form-control-lg">
                         <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13+</option>
                     </select>판</div>
-                    <div style='display:flex; justify-content: center'>
+                    <div style='text-align: center'>
                         <select class="form-control form-control-lg">
                         <option>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110+</option>
                     </select>부</div>
@@ -229,6 +258,18 @@
     var riichi_chk = [0, 0, 0, 0];
     var riichi_cnt = 0;
     var score = [25000, 25000, 25000, 25000];
+    var time = 0; //0 = 동1국, 1 = 동2국, 2 = 동3국, 3 = 동4국, 4 = 남1국...
+    var score_timer = [null, null, null, null];
+
+    real_east = document.getElementById('east_div');
+    real_south = document.getElementById('south_div');
+    real_west = document.getElementById('west_div');
+    real_north = document.getElementById('north_div');
+    east_score = document.getElementById('east_score');
+    south_score = document.getElementById('south_score');
+    west_score = document.getElementById('west_score');
+    north_score = document.getElementById('north_score');
+
     document.getElementById("east_div").addEventListener("click",  function(){
         riichi_chk[0] = Math.abs(riichi_chk[0]-1);
         if (riichi_chk[0] == 1) {
@@ -281,17 +322,69 @@
         }
         refresh();
     });
+    document.getElementById("tsumo_button").addEventListener("click", function() {
+        //대충 쯔모한 사람이 친인지 판별하는 if문
+            //대충 친이면 올 n점 하고 연장봉 올린 다음 친 넘어가지 않게 하기
+            //대충 친이 아니면 동가한테 카부리하고 친 넘어가게 하기
+            //친 넘어가는 함수를 만들자 아예
+        who_tsumo = document.getElementById(['tong_tsumo', 'nan_tsumo', 'sha_tsumo', 'pe_tsumo'][time%4]);
+        pan = parseInt(document.getElementById('tsumo_pan').value);
+        fu = parseInt(document.getElementById('tsumo_fu').value);
+        if(who_tsumo.checked) {
+            var base_score = 2**(2+pan)*fu*2; 
+            if(base_score%100) base_score = base_score - base_score%100 + 100;
+            if(pan == 3 && fu >= 70 || pan == 4 && fu >= 40 || pan > 4) base_score = 4000;
+            if(pan > 5) base_score = 6000;
+            if(pan > 7) base_score = 8000;
+            if(pan > 10) base_score = 12000;
+            if(pan > 12) base_score = 16000
+            var e = score[time%4]+base_score * 3;
+            var s =  score[(time+1)%4] - base_score;
+            var w = score[(time+2)%4] - base_score;
+            var n = score[(time+3)%4] - base_score;
+            score_timer[0] = setInterval(function(){score_animation(0, e)}, 1);
+            score_timer[1] = setInterval(function(){score_animation(1, s)}, 1);
+            score_timer[2] = setInterval(function(){score_animation(2, w)}, 1);
+            score_timer[3] = setInterval(function(){score_animation(3, n)}, 1);
+
+        } else {
+            next_time();
+        }
+        refresh();
+    })
     document.getElementById("center_div").addEventListener("click", goFull);
 
     function goFull() {
        document.documentElement.requestFullscreen();
     }
     function refresh() {
-        document.getElementById("east_score").innerHTML = String(score[0]/100);
-        document.getElementById("south_score").innerHTML = String(score[1]/100);
-        document.getElementById("west_score").innerHTML = String(score[2]/100);
-        document.getElementById("north_score").innerHTML = String(score[3]/100);
+        east_score.innerHTML = parseInt(score[0]/100);
+        south_score.innerHTML = parseInt(score[1]/100);
+        west_score.innerHTML = parseInt(score[2]/100);
+        north_score.innerHTML = parseInt(score[3]/100);
         document.getElementById("riichi").innerHTML = riichi_cnt;
+        
+    }
+    function score_animation(i, end) {
+        console.log(i, score[i], end)
+        score[i] += 100 * (end > score[i] ? 1 : -1);
+        refresh();
+        if(end == score[i]) {
+            clearInterval(score_timer[i]);
+         }
+    }
+    function next_time() {
+        time++;
+        real_east.firstChild.innerHTML = ['東', '北', '西', '南'][time%4];
+        real_south.firstChild.innerHTML = ['東', '北', '西', '南'][(time+3)%4];
+        real_west.firstChild.innerHTML = ['東', '北', '西', '南'][(time+2)%4];
+        real_north.firstChild.innerHTML = ['東', '北', '西', '南'][(time+1)%4];
+
+        [real_east, real_south, real_west, real_north][time%4].firstChild.style.color = 'red';
+        [real_east, real_south, real_west, real_north][(time+3)%4].firstChild.style.color = 'black';
+
+        curr_time = document.getElementById('curr_time');
+        curr_time.innerHTML = ['동 ', '남 '][parseInt(time/4)] + String(time%4+1) + ' 국';
     }
 </script>
 </html>
